@@ -1,0 +1,16 @@
+// digital root
+// You are given a number n. You need to find the digital root of n. DigitalRoot of a number is the recursive sum of its digits until we get a single digit number.
+// ex= 99999 sum of all digit is 45 but to 1 digit is 9
+
+class digitalroot{
+    public static int digital (int n){
+        if (n<10){
+        return n;
+        }
+        n=digital(n/10)+ n%10;
+        return (n<10) ? n: digital(n);
+    }
+    public static void main(String[] args) {
+        System.out.println(digital(99999));
+    }
+}
